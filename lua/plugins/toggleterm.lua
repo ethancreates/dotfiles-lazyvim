@@ -1,18 +1,26 @@
 return {
-  {
-    "akinsho/toggleterm.nvim",
-    cmd = "ToggleTerm",
-    build = ":ToggleTerm",
-    keys = { { "<F4>", "<cmd>ToggleTerm<cr>", desc = "Toggle floating terminal" } },
-    opts = {
-      open_mapping = [[<F4>]],
-      direction = "horizontal",
+  "akinsho/toggleterm.nvim",
+  version = "*",
+  config = function()
+    require("toggleterm").setup({
+      size = 20,
+      open_mapping = [[<c-t>]],
       shade_filetypes = {},
-      hide_numbers = true,
-      insert_mappings = true,
-      terminal_mappings = true,
+      shade_terminals = true,
+      shading_factor = 2,
       start_in_insert = true,
+      persist_size = false,
+      direction = "float",
       close_on_exit = true,
-    },
-  },
+      shell = vim.o.shell,
+      float_opts = {
+        border = "curved",
+        winblend = 0,
+        highlights = {
+          border = "Normal",
+          background = "Normal",
+        },
+      },
+    })
+  end,
 }
