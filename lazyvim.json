@@ -1,5 +1,7 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.lang.php",
+    "lazyvim.plugins.extras.lang.prisma",
     "lazyvim.plugins.extras.lang.tailwind"
   ],
   "news": {
